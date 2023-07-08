@@ -8,13 +8,13 @@ function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
 
-printMessage('Zagrałem kamień! Jeśli Twój ruch to papier, to wygrywasz!');
 
 
 
-let computerMove = "kamien";
 
 
-printMessage('Zagrałem ' + computerMove + '! Jeśli Twój ruch to papier, to wygrywasz!');
+
+
+
 
 
