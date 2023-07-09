@@ -12,24 +12,21 @@ function playGame(playerInput) {
   }
 
   function displayResult(argComputerMove, argPlayerMove) {
-    if (argComputerMove === 'kamień' && argPlayerMove === 'papier') {
+   if (
+  (argComputerMove === 'kamień' && argPlayerMove === 'papier') ||
+  (argComputerMove === 'nożyce' && argPlayerMove === 'kamień') ||
+  (argComputerMove === 'papier' && argPlayerMove === 'nożyce') 
+      ) {
       printMessage('Ty wygrywasz!');
-    } else if (argComputerMove === 'kamień' && argPlayerMove === 'nożyce') {
-      printMessage('Komputer wygrywa!');
-    } else if (argComputerMove === 'papier' && argPlayerMove === 'kamień') {
-      printMessage('Komputer wygrywa!');
-    } else if (argComputerMove === 'papier' && argPlayerMove === 'nożyce') {
-      printMessage('Ty wygrywasz!');
-    } else if (argComputerMove === 'nożyce' && argPlayerMove === 'kamień') {
-      printMessage('Ty wygrywasz!');
-    } else if (argComputerMove === 'nożyce' && argPlayerMove === 'papier') {
-      printMessage('Komputer wygrywa!');
     } else if (argComputerMove === argPlayerMove) {
       printMessage('Remis!');
     } else {
-      printMessage('Nieznany ruch. Spróbuj jeszcze raz.');
+      printMessage('Komputer wygrywa');
     }
   }
+
+
+
 
   let randomNumber = Math.floor(Math.random() * 3 + 1);
   console.log('Wylosowana liczba to: ' + randomNumber);
