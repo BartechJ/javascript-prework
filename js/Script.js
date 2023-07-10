@@ -12,11 +12,11 @@ function playGame(playerInput) {
   }
 
   function displayResult(argComputerMove, argPlayerMove) {
-   if (
-  (argComputerMove === 'kamień' && argPlayerMove === 'papier') ||
-  (argComputerMove === 'nożyce' && argPlayerMove === 'kamień') ||
-  (argComputerMove === 'papier' && argPlayerMove === 'nożyce') 
-      ) {
+    if (
+      (argComputerMove === 'kamień' && argPlayerMove === 'papier') ||
+      (argComputerMove === 'nożyce' && argPlayerMove === 'kamień') ||
+      (argComputerMove === 'papier' && argPlayerMove === 'nożyce')
+    ) {
       printMessage('Ty wygrywasz!');
     } else if (argComputerMove === argPlayerMove) {
       printMessage('Remis!');
@@ -25,20 +25,19 @@ function playGame(playerInput) {
     }
   }
 
-
-
-
   let randomNumber = Math.floor(Math.random() * 3 + 1);
   console.log('Wylosowana liczba to: ' + randomNumber);
   let argComputerMove = getMoveName(randomNumber);
   printMessage('ruch komputera to: ' + argComputerMove);
+  let argPlayerMove = getMoveName(playerInput);
+  printMessage('Twój ruch to: ' + argPlayerMove);
 
   /*
   let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
   console.log('Gracz wpisał: ' + playerInput);
-  let argPlayerMove = getMoveName(playerInput);
   */
 
+  /*
   if (playerInput == '1') {
     argPlayerMove = 'kamień';
   } else if (playerInput == '2') {
@@ -46,8 +45,9 @@ function playGame(playerInput) {
   } else if (playerInput == '3') {
     argPlayerMove = 'nożyce';
   }
-
+  
   printMessage('Twój ruch to: ' + argPlayerMove);
+  */
 
   /*
   if (computerMove === 'kamień' && playerMove === 'papier') {
@@ -72,22 +72,22 @@ function playGame(playerInput) {
   displayResult(argComputerMove, argPlayerMove);
 }
 
-let PlayRockButton = document.getElementById('play-rock');
-let PlayScissorsButton = document.getElementById('play-scissors');
-let PlayPaperButton = document.getElementById('play-paper');
+let playRockButton = document.getElementById('play-rock');
+let playScissorsButton = document.getElementById('play-scissors');
+let playPaperButton = document.getElementById('play-paper');
 
-PlayRockButton.addEventListener('click', buttonClicked);
-PlayPaperButton.addEventListener('click', buttonClicked2);
-PlayScissorsButton.addEventListener('click', buttonClicked3);
+playRockButton.addEventListener('click', handleRockButton);
+playPaperButton.addEventListener('click', handlePaperButton);
+playScissorsButton.addEventListener('click', handleScissorsButton);
 
-function buttonClicked() {
+function handleRockButton() {
   playGame(1);
 }
 
-function buttonClicked2() {
+function handlePaperButton() {
   playGame(2);
 }
 
-function buttonClicked3() {
+function handleScissorsButton() {
   playGame(3);
 }
