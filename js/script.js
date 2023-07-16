@@ -29,10 +29,10 @@ const playGame = function(playerInput) {
 
   const randomNumber = Math.floor(Math.random() * 3 + 1);
   console.log('Wylosowana liczba to: ' + randomNumber);
-  const ComputerMove = getMoveName(randomNumber); 
-  printMessage('ruch komputera to: ' + ComputerMove);
-  const PlayerMove = getMoveName(playerInput);
-  printMessage('Twój ruch to: ' + PlayerMove);
+  const computerMove = getMoveName(randomNumber); 
+  printMessage('ruch komputera to: ' + computerMove);
+  const playerMove = getMoveName(playerInput);
+  printMessage('Twój ruch to: ' + playerMove);
 
   /*
   let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
@@ -71,7 +71,7 @@ const playGame = function(playerInput) {
   }
   */
 
-  displayResult(ComputerMove, PlayerMove);
+  displayResult(computerMove, playerMove);
 }
 
 const handleRockButton = function() {
